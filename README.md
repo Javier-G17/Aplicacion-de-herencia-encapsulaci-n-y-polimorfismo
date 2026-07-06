@@ -2,7 +2,7 @@
 
 ## Información del estudiante
 
-Nombre: Bonner Javier García Guanga
+*Nombre:* Bonner Javier García Guanga.
 
 ## Descripción del sistema
 
@@ -12,59 +12,71 @@ Los productos se clasifican en dos categorías: platillos y bebidas. Cada produc
 
 ## Estructura del proyecto
 
+text
 restaurante_app/
 ├── modelos/
-│   ├── _init_.py
+│   ├── __init__.py
 │   ├── producto.py
 │   ├── platillo.py
 │   └── bebida.py
 ├── servicios/
-│   ├── _init_.py
+│   ├── __init__.py
 │   └── restaurante.py
 └── main.py
 
-## Descripción de los archivos
 
-- **modelos/producto.py:** Contiene la clase padre "*Producto*", donde se definen los atributos y métodos comunes de todos los productos.
-- **modelos/platillo.py:** Contiene la clase "*Platillo*", que hereda de "*Producto*" y agrega el atributo "*calorias*".
-- **modelos/bebida.py:** Contiene la clase "*Bebida*", que hereda de "Producto" y agrega el atributo "volumen_ml".
-- **servicios/restaurante.py:** Contiene la clase "*Restaurante*", encargada de administrar la lista de productos registrados.
-- **main.py:** Es el punto de entrada del programa. Permite registrar productos desde la consola y mostrar la información almacenada.
+### Descripción de los archivos
+
+- *modelos/producto.py:* Contiene la clase padre Producto, donde se definen los atributos y métodos comunes de todos los productos.
+- *modelos/platillo.py:* Contiene la clase Platillo, que hereda de Producto y agrega el atributo calorias.
+- *modelos/bebida.py:* Contiene la clase Bebida, que hereda de Producto y agrega el atributo volumen_ml.
+- *servicios/restaurante.py:* Contiene la clase Restaurante, encargada de administrar la lista de productos registrados.
+- *main.py:* Es el punto de entrada del programa. Permite registrar productos desde la consola y mostrar la información almacenada.
 
 ## Relación de herencia aplicada
 
 La herencia implementada en el proyecto es la siguiente:
 
+text
 Producto
 ├── Platillo
 └── Bebida
 
-La clase "*Producto*" funciona como clase padre y proporciona atributos y métodos comunes. Las clases "*Platillo*" y "*Bebida*" heredan estas características y añaden información específica para cada tipo de producto.
+
+La clase Producto funciona como clase padre y proporciona atributos y métodos comunes. Las clases Platillo y Bebida heredan estas características y añaden información específica para cada tipo de producto.
 
 ## Atributo encapsulado
 
 Para aplicar el principio de encapsulación se utilizó el atributo privado:
 
+python
 __precio
+
 
 Este atributo no puede ser modificado directamente desde otras clases. Para acceder o modificar su valor se utilizan los métodos:
 
+python
 obtener_precio()
 cambiar_precio()
 
-Además, el método "*cambiar_precio()*" valida que el nuevo precio sea mayor que cero antes de realizar la modificación.
+
+Además, el método cambiar_precio() valida que el nuevo precio sea mayor que cero antes de realizar la modificación.
 
 ## Método utilizado para demostrar polimorfismo
 
 El polimorfismo se demuestra mediante el método:
 
+python
 mostrar_informacion()
 
-Este método está definido en la clase "Producto" y es sobrescrito en las clases "*Platillo*" y "*Bebida*".
 
-Cuando la clase "*Restaurante*" recorre la lista de productos y ejecuta:
+Este método está definido en la clase Producto y es sobrescrito en las clases Platillo y Bebida.
 
+Cuando la clase Restaurante recorre la lista de productos y ejecuta:
+
+python
 producto.mostrar_informacion()
+
 
 cada objeto ejecuta su propia versión del método, mostrando información diferente según el tipo de producto.
 
