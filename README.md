@@ -12,7 +12,7 @@ Los productos se clasifican en dos categorías: platillos y bebidas. Cada produc
 
 ## Estructura del proyecto
 
-text
+```text
 restaurante_app/
 ├── modelos/
 │   ├── __init__.py
@@ -23,7 +23,7 @@ restaurante_app/
 │   ├── __init__.py
 │   └── restaurante.py
 └── main.py
-
+```
 
 ### Descripción de los archivos
 
@@ -37,46 +37,43 @@ restaurante_app/
 
 La herencia implementada en el proyecto es la siguiente:
 
-text
+```text
 Producto
 ├── Platillo
 └── Bebida
-
-
+```
 La clase Producto funciona como clase padre y proporciona atributos y métodos comunes. Las clases Platillo y Bebida heredan estas características y añaden información específica para cada tipo de producto.
 
 ## Atributo encapsulado
 
 Para aplicar el principio de encapsulación se utilizó el atributo privado:
 
-python
+```python
 __precio
-
-
+```
 Este atributo no puede ser modificado directamente desde otras clases. Para acceder o modificar su valor se utilizan los métodos:
 
-python
+```python
 obtener_precio()
 cambiar_precio()
-
-
+```
 Además, el método cambiar_precio() valida que el nuevo precio sea mayor que cero antes de realizar la modificación.
 
 ## Método utilizado para demostrar polimorfismo
 
 El polimorfismo se demuestra mediante el método:
 
-python
+```python
 mostrar_informacion()
-
+```
 
 Este método está definido en la clase Producto y es sobrescrito en las clases Platillo y Bebida.
 
 Cuando la clase Restaurante recorre la lista de productos y ejecuta:
 
-python
+```python
 producto.mostrar_informacion()
-
+```
 
 cada objeto ejecuta su propia versión del método, mostrando información diferente según el tipo de producto.
 
